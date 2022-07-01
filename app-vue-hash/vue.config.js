@@ -1,5 +1,7 @@
 
 const { name } = require('./package');
+const package = require('./package');
+console.log('package:', package)
 module.exports = {
   devServer: {
     port: 1111,

@@ -39,6 +39,7 @@ export async function bootstrap() {
 
 export async function mount(props) {
   console.log('props from main framework', props.data);
+  console.log('mount', props)
   render(props);
 }
 
