@@ -20,20 +20,20 @@ new Vue({
 
 const commonComponents = {};
 registerMicroApps([
-  { 
-    name: 'app-vue-hash', 
-    entry: 'http://localhost:1111', 
-    container: '#appContainer', 
-    activeRule: '/app-vue-hash', 
+  {
+    name: 'app-vue-hash',
+    entry: 'http://localhost:1111',
+    container: '#appContainer',
+    activeRule: '/app-vue-hash',
     props: { data : { store, router, loadMicroApp, commonComponents } }
   },
-  // { 
-  //   name: 'app-vue-history',
-  //   entry: 'http://localhost:2222', 
-  //   container: '#appContainer', 
-  //   activeRule: '/app-vue-history',
-  //   props: { data : store }
-  // },
+  {
+    name: 'app-vue-history',
+    entry: 'http://localhost:2222',
+    container: '#appContainer',
+    activeRule: '/app-vue-history',
+    props: { data : store }
+  },
 ]);
 
 // 共享组件必须开启多实例
