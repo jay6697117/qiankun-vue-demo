@@ -9,7 +9,6 @@ export default new Vuex.Store({
   },
   mutations: {
     setCommonData(state, val) {
-      console.log('val', val)
       state.commonData = val;
     }
   },

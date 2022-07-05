@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      |
       <router-link to="/about">About</router-link>
-      <p>a链接跳转到主项目/其他子项目的页面，页面会刷新，效果不好<a href="/about">parent About</a></p>
+      <p>
+        a链接跳转到主项目/其他子项目的页面，页面会刷新，效果不好
+        <a href="/about">parent About</a>
+      </p>
       <p v-if="isQiankun">
         主项目把router传给子项目，子项目用这个router来跳转
-        <span @click="goToPage('/about')">parent About</span>
+        <span @click="goToPage('/base')">parent Base</span>
         <span @click="goToPage('/app-vue-history/about')">app-vue-history About</span>
       </p>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -18,16 +22,21 @@
 export default {
   data() {
     return {
-      isQiankun: window.__POWERED_BY_QIANKUN__,
-    }
+      isQiankun: window.__POWERED_BY_QIANKUN__
+    };
+  },
+  mounted() {
+    console.log('app-vue-hash App.vue mounted');
+    console.log('App.vue mounted window:', window);
   },
   methods: {
-    goToPage(path){
-      console.log('this.$root:', this.$root)
+    goToPage(path) {
+      console.log('goToPage run');
+      console.log('this.$root:', this.$root);
       this.$root.parentRouter.push(path);
     }
-  },
-}
+  }
+};
 </script>
 
 <style>
@@ -51,7 +60,7 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-span{
+span {
   font-weight: bold;
   color: #2c3e50;
   cursor: pointer;
