@@ -1,21 +1,18 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    commonData: {
-      // parent: 1
-    },
+    commonData: {}
   },
   mutations: {
-    setCommonData(state, val){
+    setCommonData(state, val) {
+      console.log('val', val)
       state.commonData = val;
     }
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {}
+});

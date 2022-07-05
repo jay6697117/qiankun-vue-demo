@@ -3,7 +3,7 @@
     <header>
       <router-link to="/app-vue-hash/">app-vue-hash</router-link>
       <router-link to="/app-vue-history/">app-vue-history</router-link>
-      <router-link to="/about">about</router-link>
+      <router-link to="/base">Base基座</router-link>
       <span @click="changeParentState">主项目的数据：{{ commonData.parent }}，点击变回1</span>
     </header>
     <div id="appContainer"></div>
@@ -14,28 +14,31 @@
 <script>
 export default {
   computed: {
-    commonData(){
+    commonData() {
       return this.$store.state.commonData;
     }
   },
   methods: {
-    changeParentState(){
-      this.$store.commit('setCommonData',{ parent: 1 });
+    changeParentState() {
+      //vuex mutations
+      let parent = this.commonData.parent || 0;
+      parent += 1;
+      this.$store.commit('setCommonData', { parent });
     }
-  },
-}
+  }
+};
 </script>
 
 <style scoped>
-#app{
+#app {
   height: 100vh;
   text-align: center;
   position: relative;
 }
-header>a{
+header > a {
   margin: 0 20px;
 }
-.appContainer{
+.appContainer {
   background: #ccc;
   padding: 20px;
 }

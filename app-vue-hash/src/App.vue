@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     goToPage(path){
-      console.log(this.$root.parentRouter);
+      console.log('this.$root:', this.$root)
       this.$root.parentRouter.push(path);
     }
   },

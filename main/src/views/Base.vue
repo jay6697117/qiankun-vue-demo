@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is parent about page</h1>
+    <h1>This is Base基座 page</h1>
   </div>
 </template>
 
