@@ -13,11 +13,11 @@
 export default {
   name: 'Home',
   components: {
-    HelloWorld: async () => {
+    HelloWorld1: async () => {
       if(window.commonComponents.HelloWorld) return window.commonComponents.HelloWorld
       const app = window.loadMicroApp({
         name: 'app-vue-history',
-        entry: 'http://localhost:2222', 
+        entry: 'http://localhost:2222',
         container: '#hideContainer',
         props: { data: { commonComponents: window.commonComponents } }
       })
@@ -25,7 +25,7 @@ export default {
       console.log(window.commonComponents);
       console.log(app);
       // app.unmount(); 不能卸载，卸载时会去掉样式的
-      return window.commonComponents.HelloWorld
+      // return window.commonComponents.HelloWorld
     }
   },
   data() {
