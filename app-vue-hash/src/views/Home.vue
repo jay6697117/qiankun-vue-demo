@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" >
-    <span v-if="isQiankun" @click="changeParentState">主项目的数据：{{ commonData.parent }},点击变为2</span>
-    <HelloWorld msg="Welcome to Your Vue.js App1"/>
+    <div style="padding-bottom:10px;" v-if="isQiankun" @click="changeParentState">主项目的数据：{{ commonData.parent }},点击变为2</div>
+    <HelloWorld msg="Welcome to Your Vue.js App hash"/>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
 export default {
   name: 'Home',
   components: {
-    HelloWorld1: async () => {
+    HelloWorld: async () => {
       if(window.commonComponents.HelloWorld) return window.commonComponents.HelloWorld
       const app = window.loadMicroApp({
         name: 'app-vue-history',
@@ -25,7 +25,7 @@ export default {
       console.log(window.commonComponents);
       console.log(app);
       // app.unmount(); 不能卸载，卸载时会去掉样式的
-      // return window.commonComponents.HelloWorld
+      return window.commonComponents.HelloWorld
     }
   },
   data() {

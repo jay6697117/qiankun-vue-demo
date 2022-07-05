@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div>app-vue-history/src/components/HelloWorld.vue</div>
+    <h1>消息:{{ msg }}</h1>
+    <div>
+      组件路径: app-vue-hash/src/components/HelloWorld.vue
+    </div>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ export default {
   props: {
     msg: String
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -29,5 +31,11 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.hello {
+  border: 1px solid #000;
+  background-color: #eee;
+  padding:20px;
 }
 </style>

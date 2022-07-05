@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div>
-      app-vue-hash/src/components/HelloWorld.vue
+      我是app-vue-hash/src/components/HelloWorld.vue
     </div>
   </div>
 </template>
