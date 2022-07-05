@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <span v-if="isQiankun" @click="changeParentState">主项目的数据：{{ commonData.parent }},点击变为666</span>
+    <span style="color:red;" v-if="isQiankun" @click="changeParentState">主项目的数据：{{ commonData.parent }},点击变为666</span>
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>

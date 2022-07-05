@@ -4,7 +4,7 @@
       <router-link to="/app-vue-hash/">app-vue-hash</router-link>
       <router-link to="/app-vue-history/">app-vue-history</router-link>
       <router-link to="/base">Base基座</router-link>
-      <span @click="changeParentState">主项目的数据：{{ commonData.parent }}，点击变回1</span>
+      <span style="color:red;" @click="changeParentState">主项目的数据：{{ commonData.parent }}，点击+1</span>
     </header>
     <div id="appContainer"></div>
     <router-view></router-view>
