@@ -1,7 +1,5 @@
 
 const { name } = require('./package');
-const package = require('./package');
-console.log('package:', package)
 module.exports = {
   devServer: {
     port: 1111,
@@ -21,7 +19,7 @@ module.exports = {
   // 自定义webpack配置
   configureWebpack: {
     output: {
-      library: `${name}`,
+      library: `${name}-[name]`,
       libraryTarget: 'umd',// 把子应用打包成 umd 库格式
       jsonpFunction: `webpackJsonp_${name}`,
     },

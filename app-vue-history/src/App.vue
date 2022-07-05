@@ -1,12 +1,32 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <div style="color: red;font-weight: bold;">commonData:{{commonData}}</div>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isQiankun: window.__POWERED_BY_QIANKUN__
+    };
+  },
+  computed: {
+    commonData() {
+      return this.isQiankun ? this.$root.parentVuex.state.commonData : '';
+    }
+  },
+  mounted() {
+    console.log('this.$root.parentVuex', this.$root.parentVuex);
+  }
+};
+</script>
 
 <style>
 #app {

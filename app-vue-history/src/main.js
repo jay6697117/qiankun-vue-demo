@@ -1,4 +1,3 @@
-
 import './public-path';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -11,17 +10,23 @@ Vue.config.productionTip = false;
 let router = null;
 let instance = null;
 
-function render({ container } = {}) {
+function render({ data = {}, container } = {}) {
+  console.log('data 111:', data);
   router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? '/app-vue-history' : '/',
     mode: 'history',
-    routes,
+    routes
   });
 
   instance = new Vue({
     router,
     store,
-    render: h => h(App),
+    data() {
+      return {
+        parentVuex: data.store
+      };
+    },
+    render: h => h(App)
   }).$mount(container ? container.querySelector('#appVueHistory') : '#appVueHistory');
 }
 
@@ -44,7 +49,7 @@ export async function mount(props) {
 
 export async function unmount() {
   instance.$destroy();
-  instance.$el.innerHTML = "";
+  instance.$el.innerHTML = '';
   instance = null;
   router = null;
 }
