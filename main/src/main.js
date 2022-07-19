@@ -36,5 +36,8 @@ registerMicroApps([
   }
 ]);
 
+window.loadMicroApp = loadMicroApp;
+window.commonComponents = commonComponents;
+
 // 共享组件必须开启多实例
 start({ singular: false });

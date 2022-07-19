@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>消息111:{{ msg }}</h1>
+    <h1>history HelloWorld组件 消息:{{ msg }}</h1>
     <div>
       组件路径: app-vue-hash/src/components/HelloWorld.vue
     </div>
